@@ -1,4 +1,6 @@
-public class Ladder extends Equipment {
+package circus.stuff;
+
+public class Ladder extends equipment {
 
     public Ladder(int purchasePrice) {
         super(purchasePrice);

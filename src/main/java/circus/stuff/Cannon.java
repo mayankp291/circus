@@ -1,4 +1,6 @@
-public class Cannon extends Equipment {
+package circus.stuff;
+
+public class Cannon extends equipment {
 
     public Cannon(int purchasePrice) {
         super(purchasePrice);
