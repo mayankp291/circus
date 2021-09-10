@@ -4,15 +4,15 @@ import circus.animal.Animal;
 import circus.animal.Duck;
 import circus.animal.Parrot;
 import circus.stuff.Cannon;
-import circus.stuff.Equipment;
 import circus.stuff.Ladder;
+import circus.stuff.equipment;
 
 public class Circus {
     private static Animal[] animals = {
-            new Duck("Drake"),
-            new Parrot("Polly")
+            new Duck(),
+            new Parrot()
     };
-    private static Equipment[] equipments = {
+    private static equipment[] equipments = {
             new Ladder(50),
             new Cannon(5),
             new Cannon(100)
@@ -25,23 +25,26 @@ public class Circus {
         }
     }
 
-    private static int calculateAssetValue(Asset[] assets) {
+    private static int calculateValue(Asset[] assets) {
         int total = 0;
-        for (Asset a : assets) {
-            if (a.getValue() <= 5) {
-                System.out.println("Ignoring low value item: " + a.getValue());
-                continue;
+        for (Asset e : assets) {
+            if (e.getValue() <= 5) {
+                System.out.println("Ignoring low value item: " + e.getValue());
+            } else {
+                total += e.getValue();
+                System.out.println("Adding item value: " + e.getValue());
+                // some 
+                // more
+                // code 
+                // here ...
             }
-            total += a.getValue();
-            System.out.println("Adding item value: " + a.getValue());
         }
         return total;
     }
 
     public static void main(String[] args) {
         makeAnimalsTalk();
-        //yo
-        System.out.println("Total value of animals " + calculateAssetValue(animals));
-        System.out.println("Total value of equipments " + calculateAssetValue(equipments));
+        System.out.println("Total value of equipments " + calculateValue(animals));
+        System.out.println("Total value of equipments " + calculateValue(equipments));
     }
 }

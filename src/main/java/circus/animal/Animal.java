@@ -2,8 +2,13 @@ package circus.animal;
 
 import circus.Asset;
 
-public abstract class Animal implements Asset {
+abstract public class Animal implements Asset {
 
-    public String name;
-    public abstract String speak();
+   public String speak() {
+        return null;
+    }
+
+    public int getValue() {
+        return 10;
+    }
 }
